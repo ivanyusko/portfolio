@@ -1,0 +1,122 @@
+/* Загальні стилі */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background: #f4f4f9; color: #333; line-height: 1.6; }
+.container { max-width: 1100px; margin: auto; padding: 0 20px; }
+html { scroll-behavior: smooth; }
+
+/* Header & Nav */
+.header { background: #2c3e50; color: white; padding: 20px 0; position: sticky; top: 0; z-index: 1000; }
+.navbar { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: bold; }
+.nav-links { display: flex; list-style: none; }
+.nav-links a { color: white; text-decoration: none; margin-left: 20px; transition: 0.3s; }
+.nav-links a:hover { color: #3498db; }
+
+/* Hero Section */
+.hero { min-height: 80vh; display: flex; align-items: center; background: #fff; padding: 60px 0; }
+.hero-flex { display: flex; align-items: center; justify-content: space-between; gap: 40px; width: 100%; }
+.hero-content { flex: 1; text-align: left; }
+.hero-image { flex: 1; display: flex; justify-content: center; margin-top: 40px; }
+
+.highlight { color: #3498db; }
+h1 { font-size: 3rem; margin-bottom: 1rem; line-height: 1.2; }
+.btn { background: #3498db; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
+.btn:hover { background: #2980b9; transform: translateY(-2px); }
+
+/* Стилі фото профілю */
+.profile-pic {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    object-position: 50% 10%; 
+    border-radius: 50%;
+    border: 8px solid #f4f4f9;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Секції та заголовки */
+.section-title { text-align: center; margin: 60px 0 40px; font-size: 2.2rem; position: relative; }
+.section-title::after { content: ''; display: block; width: 50px; height: 4px; background: #3498db; margin: 10px auto; }
+
+/* Grids */
+.skills-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 20px; 
+    margin-bottom: 40px;
+}
+
+.projects-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    margin-bottom: 60px;
+}
+
+.skill-card, .project-card { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+    text-align: center; 
+    transition: transform 0.3s;
+}
+
+.project-card:hover { transform: translateY(-5px); }
+.tech { display: block; margin-top: 15px; color: #3498db; font-size: 0.9rem; font-weight: bold; }
+
+/* Contact Form */
+#contact-form { max-width: 600px; margin: 0 auto 60px; display: flex; flex-direction: column; gap: 15px; }
+input, textarea { padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
+textarea { resize: vertical; }
+
+/* Mobile Menu & Адаптивність */
+.burger { display: none; cursor: pointer; }
+.burger span { display: block; width: 25px; height: 3px; background: white; margin: 5px; transition: 0.3s; }
+
+@media (max-width: 768px) {
+    .nav-links { display: none; flex-direction: column; background: #2c3e50; position: absolute; top: 70px; right: 0; width: 100%; padding: 20px 0; }
+    .nav-links.active { display: flex; }
+    .nav-links li { padding: 10px; }
+    .burger { display: block; }
+    .hero-flex { flex-direction: column-reverse; text-align: center; }
+    .hero-content { text-align: center; }
+    h1 { font-size: 2.2rem; }
+    .hero-image { margin-top: 20px; margin-bottom: 20px; }
+    .profile-pic { width: 220px; height: 220px; }
+    .section-title { font-size: 1.8rem; }
+}
+
+/* ФУТЕР ТА СОЦМЕРЕЖІ */
+footer { text-align: center; padding: 40px 0; background: #2c3e50; color: white; border-top: 5px solid #3498db; }
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem; /* Зменшений розмір назв */
+    transition: 0.3s;
+}
+
+.icon-svg {
+    width: 18px; /* Маленька графічна іконка */
+    height: 18px;
+    fill: #fff;
+    transition: 0.3s;
+}
+
+.social-links a:hover { color: #3498db; }
+
+.social-links a:hover .icon-svg {
+    fill: #3498db;
+    transform: scale(1.1);
+}
